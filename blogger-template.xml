@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsversion='3' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/gastats' xmlns:data='http://www.google.com/schema/ga' xmlns:expr='http://www.google.com/schema/ga'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title><data:blog.title/></title>
+
+  <b:skin><![CDATA[
+    /* CSS bersih untuk Blogger */
+    body { margin: 0; padding: 0; }
+    .status-msg-wrap { display: none !important; }
+    #navbar-iframe { display: none !important; }
+  ]]></b:skin>
+</head>
+<body>
+  <!-- Root React App -->
+  <div id='root'></div>
+
+  <!-- Area Widget Blogger (Wajib ada minimal satu) -->
+  <b:section id='main' showaddelement='no'>
+    <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='false'>
+      <b:includable id='main'></b:includable>
+    </b:widget>
+  </b:section>
+
+  <!-- TEMPEL ISI dist/index.html DI BAWAH INI SETELAH BUILD -->
+  <!-- [KONTEN_VITE_DI_SINI] -->
+
+</body>
+</html>
