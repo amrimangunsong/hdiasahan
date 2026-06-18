@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Search, Package, ShieldCheck, UserPlus, TrendingUp, Users, Award, CheckCircle } from 'lucide-react'
+import { Search, Package, ShieldCheck, CheckCircle } from 'lucide-react'
 
 function Navbar() {
   const location = useLocation()
@@ -75,85 +75,97 @@ function Certificates() {
 }
 
 function Opportunity() {
+  const waNumber = "628123456789" // TODO: Ganti dengan nomor WA aslinya
+  const waLink = `https://wa.me/${waNumber}?text=Halo,%20saya%20tertarik%20ingin%20tahu%20lebih%20lanjut%20tentang%20peluang%20bisnis%20HDI.`
+
   return (
-    <div className="space-y-20 pb-20">
-      {/* Hero Section */}
-      <section className="text-center pt-10">
-        <div className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-bold mb-6">
-          HDI BUSINESS OPPORTUNITY
-        </div>
-        <h2 className="text-5xl font-extrabold mb-6 leading-tight">Ubah Hidup Anda Bersama <br/><span className="text-blue-600">Komunitas Health & Wealth</span></h2>
-        <p className="text-xl text-slate-600 mb-10 max-w-3xl mx-auto">
-          Bangun bisnis mandiri dengan produk perlebahan yang sudah teruji lebih dari 30 tahun. Fleksibel, menguntungkan, dan berdampak bagi kesehatan banyak orang.
+    <div className="space-y-24 pb-24 font-sans leading-relaxed text-slate-800">
+      {/* Section 1: Hero */}
+      <section className="text-center pt-10 px-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-slate-900 tracking-tight">
+          Kerja Tetap Jalan, <br/>
+          <span className="text-blue-600">Penghasilan Tambahan</span> Juga Bisa Jalan
+        </h2>
+        <p className="text-lg md:text-xl text-slate-600 mb-6 max-w-2xl mx-auto">
+          Banyak karyawan ingin memiliki pemasukan tambahan, tetapi terkendala waktu, modal, dan pengalaman.
         </p>
-        <a href="https://hdi.com/new-registration" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 shadow-lg shadow-blue-200 transition inline-flex items-center gap-2">
-          Mulai Sekarang <UserPlus size={20} />
+        <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+          Melalui sistem bisnis HDI, Anda dapat memulai secara bertahap sambil tetap menjalankan pekerjaan utama.
+        </p>
+        <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 shadow-lg shadow-blue-200 transition inline-flex items-center gap-2">
+          Saya Ingin Tahu Caranya
         </a>
       </section>
 
-      {/* Why HDI Section */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600">
-            <TrendingUp size={32} />
-          </div>
-          <h3 className="text-xl font-bold mb-3">Penghasilan Berkelanjutan</h3>
-          <p className="text-slate-500">Sistem bagi hasil yang adil dan jenjang karier yang jelas untuk masa depan finansial Anda.</p>
-        </div>
-        <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600">
-            <Users size={32} />
-          </div>
-          <h3 className="text-xl font-bold mb-3">Mentor & Support</h3>
-          <p className="text-slate-500">Tidak perlu takut memulai. Kami sediakan pelatihan intensif dan komunitas yang suportif.</p>
-        </div>
-        <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm text-center">
-          <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600">
-            <Award size={32} />
-          </div>
-          <h3 className="text-xl font-bold mb-3">Produk Berkualitas</h3>
-          <p className="text-slate-500">Berbasis ilmiah (High-Desert) yang telah membantu jutaan orang meningkatkan kualitas kesehatan.</p>
-        </div>
-      </section>
-
-      {/* Benefits Checklist */}
-      <section className="bg-blue-600 rounded-3xl p-10 md:p-16 text-white overflow-hidden relative">
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-3xl font-bold mb-6">Apa yang Anda Dapatkan?</h3>
-            <ul className="space-y-4">
-              {[
-                "Hak bisnis internasional",
-                "Akses portal belajar HDI Academy",
-                "Sistem dropship & pengiriman nasional",
-                "Bonus bulanan & trip luar negeri",
-                "Akses eksklusif ke produk baru"
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3">
-                  <CheckCircle className="text-blue-300" size={24} />
-                  <span className="text-lg font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-blue-500/30 p-8 rounded-2xl border border-white/20 backdrop-blur-sm">
-            <p className="text-xl italic mb-6">"Bergabung dengan HDI bukan hanya tentang jualan madu, tapi tentang membangun aset dan membantu orang sehat."</p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-200 rounded-full"></div>
-              <div>
-                <p className="font-bold">Enterprise Leader</p>
-                <p className="text-blue-200 text-sm">HDI Network</p>
-              </div>
+      {/* Section 2: Pain Point */}
+      <section className="bg-white rounded-3xl p-10 md:p-16 border border-slate-100 shadow-sm max-w-4xl mx-auto">
+        <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center">Apakah Anda Mengalami Hal Ini?</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            "Gaji terasa habis sebelum akhir bulan",
+            "Pengeluaran terus bertambah",
+            "Ingin punya usaha sendiri tetapi takut gagal",
+            "Ingin menambah penghasilan tanpa mengganggu pekerjaan",
+            "Khawatir masa depan hanya bergantung pada gaji"
+          ].map((text, i) => (
+            <div key={i} className="flex items-start gap-4">
+              <CheckCircle className="text-blue-500 shrink-0 mt-1" size={24} />
+              <span className="text-lg text-slate-700 font-medium">{text}</span>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 3: Mindset */}
+      <section className="text-center px-4">
+        <h3 className="text-3xl font-bold mb-8">Mengapa Banyak Karyawan Mencari <br className="hidden md:block"/> Penghasilan Kedua?</h3>
+        <div className="max-w-3xl mx-auto space-y-6 text-lg text-slate-600">
+          <p>
+            Karena satu sumber penghasilan sering kali tidak cukup untuk menghadapi kebutuhan yang terus meningkat.
+          </p>
+          <p className="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-600 text-blue-900 font-medium">
+            Bukan karena gaji kurang, tetapi karena biaya hidup terus bertambah setiap tahun.
+          </p>
+          <p>
+            Orang yang memiliki lebih dari satu sumber penghasilan biasanya memiliki fleksibilitas finansial yang lebih baik.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 4: Solusi */}
+      <section className="bg-slate-900 rounded-3xl p-10 md:p-16 text-white max-w-5xl mx-auto overflow-hidden relative">
+        <div className="relative z-10">
+          <h3 className="text-3xl font-bold mb-8 text-center md:text-left">Mengenal Peluang Bisnis HDI</h3>
+          <p className="text-lg text-slate-300 mb-10 max-w-3xl leading-relaxed">
+            HDI merupakan perusahaan yang berfokus pada produk kesehatan alami dan telah berkembang di Indonesia selama puluhan tahun. Bisnis ini dapat dijalankan:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "Paruh waktu",
+              "Fleksibel",
+              "Modal relatif terjangkau",
+              "Didukung sistem dan komunitas",
+              "Cocok untuk pemula"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3 bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10">
+                <CheckCircle className="text-blue-400" size={20} />
+                <span className="font-semibold">{item}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Footer */}
-      <section className="text-center bg-slate-100 rounded-3xl p-12">
-        <h3 className="text-2xl font-bold mb-4">Siap Mengambil Langkah Pertama?</h3>
-        <p className="text-slate-600 mb-8">Daftar sekarang sebagai Enterpriser dan mulai perjalanan Anda.</p>
-        <a href="https://hdi.com/new-registration" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">Daftar Member Gratis</a>
+      {/* Section 5: CTA */}
+      <section className="text-center pt-10 px-4">
+        <h3 className="text-3xl font-bold mb-6">Mulai Dengan Konsultasi Gratis</h3>
+        <div className="max-w-2xl mx-auto space-y-6 mb-10 text-lg text-slate-600">
+          <p>Tidak ada kewajiban untuk bergabung.</p>
+          <p>Kita bisa berdiskusi terlebih dahulu apakah peluang ini sesuai dengan tujuan dan kondisi Anda.</p>
+        </div>
+        <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-green-600 shadow-lg shadow-green-100 transition inline-flex items-center gap-2">
+          Chat WhatsApp Sekarang
+        </a>
       </section>
     </div>
   )
