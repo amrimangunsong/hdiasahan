@@ -5,9 +5,15 @@
   <meta charset='UTF-8'/>
   <meta content='width=device-width, initial-scale=1' name='viewport'/>
   <title><data:blog.title/></title>
+
+  <!-- SEO Meta Tags -->
+  <meta content='Pusat informasi produk kesehatan alami dan peluang bisnis HDI untuk wilayah Asahan dan sekitarnya.' name='description'/>
+  <meta content='hdiasahan - Solusi Kesehatan Alami Dunia' property='og:title'/>
+  <meta content='Pusat informasi produk kesehatan alami dan peluang bisnis HDI untuk wilayah Asahan dan sekitarnya.' property='og:description'/>
+  <meta content='website' property='og:type'/>
   
   <!-- Asset CSS dari GitHub via JSDelivr -->
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@main/dist/assets/index.css'/>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@1900340f330d18024505cbeee8b30855ba7dcdef/dist/assets/index.css'/>
   
   <b:skin><![CDATA[
     body { margin: 0; padding: 0; }
@@ -28,6 +34,6 @@
   </div>
 
   <!-- Asset JS dari GitHub via JSDelivr -->
-  <script type='module' src='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@main/dist/assets/index.js'></script>
+  <script type='module' src='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@1900340f330d18024505cbeee8b30855ba7dcdef/dist/assets/index.js'></script>
 </body>
 </html>
