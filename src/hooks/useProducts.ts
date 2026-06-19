@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { supabase } from '../lib/supabase'
 
 export interface Product {
@@ -15,10 +15,15 @@ export function useProducts() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
+  
+  // Track the ID of the active request to prevent race conditions
+  const activeRequestIdRef = useRef<number>(0)
 
   const fetchProducts = useCallback(async () => {
+    const requestId = ++activeRequestIdRef.current
     setLoading(true)
     setError(null)
+    
     try {
       const { data, error: fetchError } = await supabase
         .from('products')
@@ -28,19 +33,29 @@ export function useProducts() {
       if (fetchError) {
         throw fetchError
       }
-      setProducts(data || [])
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
-      console.error('Error fetching products:', err)
-      setError(err.message || 'Gagal memuat produk')
+
+      if (requestId === activeRequestIdRef.current) {
+        setProducts(data || [])
+      }
+    } catch (err) {
+      if (requestId === activeRequestIdRef.current) {
+        console.error('Error fetching products:', err)
+        setError(err instanceof Error ? err.message : 'Gagal memuat produk')
+      }
     } finally {
-      setLoading(false)
+      if (requestId === activeRequestIdRef.current) {
+        setLoading(false)
+      }
     }
   }, [])
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchProducts()
+    return () => {
+      // Invalidate active request on unmount
+      activeRequestIdRef.current = 0
+    }
   }, [fetchProducts])
 
   return { products, loading, error, refetch: fetchProducts }
