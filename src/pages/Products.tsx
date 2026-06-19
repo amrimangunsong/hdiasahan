@@ -23,7 +23,7 @@ export default function Products() {
         <div className="bg-blue-600 p-2 rounded-xl text-white">
           <Package size={24} />
         </div>
-        <h2 className="text-4xl font-black text-slate-900">Katalog Produk</h2>
+        <h1 className="text-4xl font-black text-slate-900">Katalog Produk</h1>
       </motion.div>
       
       {loading && (
