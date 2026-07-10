@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, TrendingUp, MessageCircle } from 'lucide-react'
 
 export default function Opportunity() {
-  const waNumber = "628123456789" // TODO: Ganti dengan nomor WA aslinya
+  const waNumber = "6282184828865"
   const waLink = `https://wa.me/${waNumber}?text=Halo,%20saya%20tertarik%20ingin%20tahu%20lebih%20lanjut%20tentang%20peluang%20bisnis%20HDI.`
 
   const fadeIn = {
