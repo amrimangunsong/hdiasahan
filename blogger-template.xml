@@ -13,7 +13,7 @@
   <meta content='website' property='og:type'/>
   
   <!-- Asset CSS dari GitHub via JSDelivr -->
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@59706b3aad58ea3c415f51f65c8a2bd84f0f4cb2/dist/assets/index.css'/>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@b0b0137c9bb4566f0b950f673e8a2f768013cf6e/dist/assets/index.css'/>
   
   <b:skin><![CDATA[
     body { margin: 0; padding: 0; }
@@ -34,6 +34,6 @@
   </div>
 
   <!-- Asset JS dari GitHub via JSDelivr -->
-  <script type='module' src='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@59706b3aad58ea3c415f51f65c8a2bd84f0f4cb2/dist/assets/index.js'></script>
+  <script type='module' src='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@b0b0137c9bb4566f0b950f673e8a2f768013cf6e/dist/assets/index.js'></script>
 </body>
 </html>
