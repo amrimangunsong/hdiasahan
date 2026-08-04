@@ -93,7 +93,14 @@ export default function Products() {
               </div>
               <div className="px-2 pt-4 border-t border-slate-50 flex justify-between items-center mt-auto">
                 <span className="font-black text-xl text-blue-600">{formatPrice(product.price)}</span>
-                <button className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition">Detail</button>
+                <a 
+                  href={`https://wa.me/6282184828865?text=Halo,%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(product.name)}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-600 transition inline-block"
+                >
+                  Pesan / Detail
+                </a>
               </div>
             </motion.div>
           ))}

@@ -30,7 +30,7 @@ export default function Opportunity() {
               Mulai bertahap bersama HDI tanpa harus meninggalkan pekerjaan utama Anda.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={waLink} className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 shadow-xl shadow-blue-200 transition text-center flex items-center justify-center gap-2">
+              <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 shadow-xl shadow-blue-200 transition text-center flex items-center justify-center gap-2">
                 Saya Ingin Tahu Caranya <ArrowRight size={20} />
               </a>
             </div>

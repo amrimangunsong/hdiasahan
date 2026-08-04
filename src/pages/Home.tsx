@@ -35,9 +35,9 @@ export default function Home() {
         >
           <div className="absolute -inset-10 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
           <img 
-            src="https://images.unsplash.com/photo-1585250001004-9721752b0270?auto=format&fit=crop&q=80&w=800" 
+            src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=800" 
             alt="Natural Health" 
-            className="relative rounded-[3rem] shadow-2xl"
+            className="relative rounded-[3rem] shadow-2xl w-full h-auto object-cover"
           />
         </motion.div>
       </section>

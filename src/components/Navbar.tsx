@@ -23,9 +23,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Produk', path: '/products' },
-    { name: 'Sertifikat', path: '/certificates' },
     { name: 'Bisnis', path: '/page/opportunity' },
-    { name: 'Scan Tiket', path: '/scan' },
   ]
 
   if (location.pathname.startsWith('/ticket')) return null;
@@ -53,9 +51,6 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link to="/page/opportunity" className="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
-            Gabung Bisnis
-          </Link>
         </div>
 
         <button className="md:hidden p-2 text-slate-600" onClick={() => setIsOpen(!isOpen)}>

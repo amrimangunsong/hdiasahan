@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { supabase } from '../lib/supabase'
+import { sql } from '../lib/neon'
 
 export interface Product {
   id: string;
@@ -9,6 +9,16 @@ export interface Product {
   image_url: string | null;
   category: string | null;
   created_at: string;
+}
+
+interface NeonProductRow {
+  id: string | number;
+  name: string;
+  description?: string | null;
+  price: string | number;
+  image_url?: string | null;
+  category?: string | null;
+  created_at: string | Date;
 }
 
 export function useProducts() {
@@ -25,21 +35,24 @@ export function useProducts() {
     setError(null)
     
     try {
-      const { data, error: fetchError } = await supabase
-        .from('products')
-        .select('*')
-        .order('name', { ascending: true })
-
-      if (fetchError) {
-        throw fetchError
-      }
+      const data = await sql`SELECT id, name, description, price, image_url, category, created_at FROM products ORDER BY name ASC`
 
       if (requestId === activeRequestIdRef.current) {
-        setProducts(data || [])
+        const rows = (data as unknown) as NeonProductRow[]
+        const formattedData: Product[] = (rows || []).map((row) => ({
+          id: String(row.id),
+          name: String(row.name),
+          description: row.description ? String(row.description) : null,
+          price: typeof row.price === 'string' ? parseFloat(row.price) : Number(row.price),
+          image_url: row.image_url ? String(row.image_url) : null,
+          category: row.category ? String(row.category) : null,
+          created_at: String(row.created_at)
+        }))
+        setProducts(formattedData)
       }
     } catch (err) {
       if (requestId === activeRequestIdRef.current) {
-        console.error('Error fetching products:', err)
+        console.error('Error fetching products from Neon:', err)
         setError(err instanceof Error ? err.message : 'Gagal memuat produk')
       }
     } finally {
