@@ -71,6 +71,8 @@ export default function Products() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="bg-white p-6 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-shadow duration-500 group flex flex-col justify-between"
+              itemScope
+              itemType="https://schema.org/Product"
             >
               <div>
                 <div className="aspect-[4/5] bg-slate-100 rounded-[2rem] mb-6 overflow-hidden relative">
@@ -79,6 +81,7 @@ export default function Products() {
                       src={product.image_url} 
                       alt={product.name} 
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                      itemProp="image"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-slate-400 font-bold uppercase tracking-widest text-xs group-hover:scale-110 transition duration-700">
@@ -87,12 +90,23 @@ export default function Products() {
                   )}
                 </div>
                 <div className="px-2">
-                  <h3 className="font-bold text-2xl text-slate-900 mb-2">{product.name}</h3>
-                  <p className="text-slate-500 text-sm mb-6 leading-relaxed">{product.description || 'Tidak ada deskripsi tersedia.'}</p>
+                  <h3 className="font-bold text-2xl text-slate-900 mb-2" itemProp="name">{product.name}</h3>
+                  <p className="text-slate-500 text-sm mb-6 leading-relaxed" itemProp="description">{product.description || 'Tidak ada deskripsi tersedia.'}</p>
                 </div>
               </div>
-              <div className="px-2 pt-4 border-t border-slate-50 flex justify-between items-center mt-auto">
-                <span className="font-black text-xl text-blue-600">{formatPrice(product.price)}</span>
+              <div 
+                className="px-2 pt-4 border-t border-slate-50 flex justify-between items-center mt-auto"
+                itemProp="offers"
+                itemScope
+                itemType="https://schema.org/Offer"
+              >
+                <meta itemProp="priceCurrency" content="IDR" />
+                <meta itemProp="price" content={product.price.toString()} />
+                <link itemProp="availability" href="https://schema.org/InStock" />
+                
+                <span className="font-black text-xl text-blue-600" aria-label={`Harga ${formatPrice(product.price)}`}>
+                  {formatPrice(product.price)}
+                </span>
                 <a 
                   href={`https://wa.me/6282184828865?text=Halo,%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(product.name)}`} 
                   target="_blank" 
