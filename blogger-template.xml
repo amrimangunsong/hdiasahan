@@ -6,57 +6,65 @@
   <meta content='width=device-width, initial-scale=1' name='viewport'/>
   <title><data:blog.title/></title>
 
-  <!-- SEO & Open Graph Meta Tags -->
-  <meta content='Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan terpercaya untuk wilayah Asahan dan sekitarnya.' name='description'/>
-  <meta content='HDI Asahan - Pusat Informasi Produk Kesehatan Alami &amp; Peluang Bisnis' property='og:title'/>
-  <meta content='Temukan produk kesehatan perlebahan berkualitas dunia dan peluang membangun usaha sampingan bersama HDI Center Asahan.' property='og:description'/>
-  <meta content='website' property='og:type'/>
-  <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
-  <meta content='HDI Center Asahan' property='og:site_name'/>
+<meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>HDI Center Asahan - Pusat Informasi Produk Kesehatan Alami & Peluang Bisnis</title>
+    <meta name="description" content="Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan terpercaya untuk wilayah Asahan dan sekitarnya." />
+    <meta name="keywords" content="HDI Asahan, High Desert Asahan, Produk Kesehatan HDI, Peluang Bisnis HDI, Usaha Sampingan Asahan" />
 
-  <!-- Twitter Card -->
-  <meta name='twitter:card' content='summary_large_image'/>
-  <meta name='twitter:title' content='HDI Center Asahan - Solusi Kesehatan &amp; Peluang Usaha'/>
-  <meta name='twitter:description' content='Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan di Asahan.'/>
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HDI Center Asahan - Solusi Kesehatan & Peluang Usaha" />
+    <meta property="og:description" content="Temukan produk kesehatan perlebahan berkualitas dunia dan peluang membangun usaha sampingan bersama HDI Center Asahan." />
+    <meta property="og:url" content="https://hdicenterasahan.blogspot.com/" />
+    <meta property="og:site_name" content="HDI Center Asahan" />
 
-  <!-- Schema.org JSON-LD Structured Data -->
-  <script type='application/ld+json'>
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "HDI Center Asahan",
-    "description": "Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan untuk wilayah Asahan dan sekitarnya.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Asahan",
-      "addressRegion": "Sumatera Utara",
-      "addressCountry": "ID"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 2.9833,
-      "longitude": 99.6167
-    },
-    "url": "https://hdicenterasahan.blogspot.com/",
-    "telephone": "+6282184828865",
-    "priceRange": "$$"
-  }
-  </script>
-  
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1409312038048592');
-    fbq('track', 'PageView');
-  </script>
-  <!-- End Meta Pixel Code -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HDI Center Asahan - Solusi Kesehatan & Peluang Usaha" />
+    <meta name="twitter:description" content="Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan di Asahan." />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "HDI Center Asahan",
+      "image": "https://hdicenterasahan.blogspot.com/favicon.svg",
+      "description": "Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan untuk wilayah Asahan dan sekitarnya.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Asahan",
+        "addressRegion": "Sumatera Utara",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 2.9833,
+        "longitude": 99.6167
+      },
+      "url": "https://hdicenterasahan.blogspot.com/",
+      "telephone": "+6282184828865",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1409312038048592');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
   
   <!-- Asset CSS dari GitHub via JSDelivr -->
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@main/dist/assets/index.css'/>
