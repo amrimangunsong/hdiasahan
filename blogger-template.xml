@@ -6,11 +6,42 @@
   <meta content='width=device-width, initial-scale=1' name='viewport'/>
   <title><data:blog.title/></title>
 
-  <!-- SEO Meta Tags -->
-  <meta content='Pusat informasi produk kesehatan alami dan peluang bisnis HDI untuk wilayah Asahan dan sekitarnya.' name='description'/>
-  <meta content='HDI Asahan - Solusi Kesehatan Alami Dunia' property='og:title'/>
-  <meta content='Pusat informasi produk kesehatan alami dan peluang bisnis HDI untuk wilayah Asahan dan sekitarnya.' property='og:description'/>
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta content='Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan terpercaya untuk wilayah Asahan dan sekitarnya.' name='description'/>
+  <meta content='HDI Asahan - Pusat Informasi Produk Kesehatan Alami &amp; Peluang Bisnis' property='og:title'/>
+  <meta content='Temukan produk kesehatan perlebahan berkualitas dunia dan peluang membangun usaha sampingan bersama HDI Center Asahan.' property='og:description'/>
   <meta content='website' property='og:type'/>
+  <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+  <meta content='HDI Center Asahan' property='og:site_name'/>
+
+  <!-- Twitter Card -->
+  <meta name='twitter:card' content='summary_large_image'/>
+  <meta name='twitter:title' content='HDI Center Asahan - Solusi Kesehatan &amp; Peluang Usaha'/>
+  <meta name='twitter:description' content='Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan di Asahan.'/>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "HDI Center Asahan",
+    "description": "Pusat informasi produk kesehatan perlebahan alami HDI dan peluang usaha sampingan untuk wilayah Asahan dan sekitarnya.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Asahan",
+      "addressRegion": "Sumatera Utara",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 2.9833,
+      "longitude": 99.6167
+    },
+    "url": "https://hdicenterasahan.blogspot.com/",
+    "telephone": "+6282184828865",
+    "priceRange": "$$"
+  }
+  </script>
   
   <!-- Meta Pixel Code -->
   <script>
