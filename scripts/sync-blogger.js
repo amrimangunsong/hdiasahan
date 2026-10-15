@@ -6,7 +6,6 @@ const templatePath = path.resolve(process.cwd(), 'blogger-template.xml')
 
 try {
   const indexContent = fs.readFileSync(indexPath, 'utf8')
-  let templateContent = fs.readFileSync(templatePath, 'utf8')
 
   // Ekstrak tag <head>...</head> dari index.html
   const headMatch = indexContent.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)
@@ -17,20 +16,19 @@ try {
 
   let indexHeadInner = headMatch[1]
 
-  // Ganti local asset href/src dengan JSDelivr CDN
-  // Misal: <link rel="stylesheet" crossorigin href="/assets/index.css"> -> <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@main/dist/assets/index.css'/>
-  // <script type="module" crossorigin src="/assets/index.js"></script> -> <script type='module' src='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@main/dist/assets/index.js'></script>
-  
   // Hapus tag vite dev scripts jika ada
   indexHeadInner = indexHeadInner.replace(/<script type="module" src="\/src\/main\.tsx"><\/script>/g, '')
 
-  // Pastikan JSDelivr link untuk CSS dan JS ada di Blogger template
+  // Escape ampersand (&) agar valid untuk XML/SAX parser Blogger (kecuali yang sudah &amp; atau entitas valid lainnya)
+  // Regex mencari & yang tidak diikuti oleh #?[\w\d]+;
+  let xmlSafeHead = indexHeadInner.replace(/&(?!(#[0-9]+|[a-zA-Z0-9]+);)/g, '&amp;')
+
+  // JSDelivr link untuk CSS dan JS
   const cssCdn = "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@main/dist/assets/index.css'/>"
   const jsCdn = "<script type='module' src='https://cdn.jsdelivr.net/gh/amrimangunsong/hdiasahan@main/dist/assets/index.js'></script>"
 
-  // Buat bersih bagian head untuk blogger-template.xml
-  // Masukkan CSS CDN di head
-  let newHeadContent = indexHeadInner.trim() + '\n  \n  <!-- Asset CSS dari GitHub via JSDelivr -->\n  ' + cssCdn + '\n  \n  <b:skin><![CDATA[\n    body { margin: 0; padding: 0; }\n    #navbar-iframe { display: none !important; }\n  ]]></b:skin>'
+  // Susun bagian head untuk blogger-template.xml
+  let newHeadContent = xmlSafeHead.trim() + '\n  \n  <!-- Asset CSS dari GitHub via JSDelivr -->\n  ' + cssCdn + '\n  \n  <b:skin><![CDATA[\n    body { margin: 0; padding: 0; }\n    #navbar-iframe { display: none !important; }\n  ]]></b:skin>'
 
   // Susun ulang blogger-template.xml lengkap dengan struktur XML Blogger
   const newTemplate = `<?xml version="1.0" encoding="UTF-8" ?>
@@ -62,7 +60,7 @@ ${newHeadContent}
 </html>`
 
   fs.writeFileSync(templatePath, newTemplate, 'utf8')
-  console.log('✅ Berhasil menyinkronkan index.html ke blogger-template.xml secara otomatis!')
+  console.log('✅ Berhasil menyinkronkan & meng-escape XML blogger-template.xml secara otomatis!')
 } catch (err) {
   console.error('❌ Error saat sinkronisasi blogger template:', err)
   process.exit(1)
